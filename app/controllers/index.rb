@@ -3,8 +3,8 @@ get '/' do
   erb :index
 end
 
-get '/:word' do
-  @word = params[:word]
+post '/' do
+  @word = params[:user_input]
 
   @sorted_word = @word.downcase.split("").sort.join("")
 
@@ -21,6 +21,6 @@ get '/:word' do
 
   end
  
-  erb :index
+  erb :anagram
 
 end

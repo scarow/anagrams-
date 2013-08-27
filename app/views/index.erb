@@ -1,20 +1,17 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
+  <h1>Welcome to anagram solver!</h1>
 
-
-  <p>Hello, world!</p>
- <p> Show a list of anagrams for <%= @word %></p>
- <p>
+  <form action="/" method="post">
+    Find the anagram of this word:
+    <br>
+    <input type="text" name="user_input">
+    <input type="submit" value="Submit">
+  </form>
   <ul>
 
-      <% @array_of_anagrams.each do |w|%>
-        <li> 
-      <%= w %>
-      
-    </li>
-    <% end %>
-    </ul>
-  </p>
+
+
+
 
 
 
