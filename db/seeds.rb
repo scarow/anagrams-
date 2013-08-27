@@ -2,7 +2,7 @@
 File.open('app/words', "r").read.each_line do |line|
 
   chomped_line = line.downcase.chomp
-  Word.create(:entry => chomped_line, :sorted_entry => chomped_line.split('').sort.join('')) #need to slice this so we can sort it
+  Word.create(:entry => chomped_line) #need to slice this so we can sort it
 
 
 # This is the same as THIS:

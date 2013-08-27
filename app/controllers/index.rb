@@ -1,26 +1,14 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
 post '/' do
   @word = params[:user_input]
-
-  @sorted_word = @word.downcase.split("").sort.join("")
-
-  list_of_words = Word.all
-  @array_of_anagrams = []
-
-
-
+  @anagrams = []
+  sorted_word = @word.downcase.split("").sort.join("")
+  list_of_words = Word.where(sorted_entry: sorted_word)
   list_of_words.each do |w|
-
-    if w.sorted_entry == @sorted_word
-      @array_of_anagrams << w.entry
-    end
-
+    @anagrams << w.entry
   end
- 
-  erb :anagram
-
+  erb :index
 end

@@ -1,10 +1,8 @@
 <p> Here are the anagrams for  <%= @word %></p>
- <p>
-      <% @array_of_anagrams.each do |w|%>
-        <li> 
-      <%= w %>
-      
-    </li>
+<p>
+  <ul>
+    <% @anagrams.each do |anagram|%>
+    <li> <%= anagram %> </li>
     <% end %>
-    </ul>
-  </p>
+  </ul>
+</p>
